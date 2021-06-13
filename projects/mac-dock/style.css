@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto;
+}
+
+.container {
+  width: 470px;
+  height: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: url("wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.dock {
+  height: 70px;
+  width: 70%;
+  border-radius: 10px 10px 0 0;
+  background-color: rgba(77, 75, 76, 0.5);
+  position: relative;
+}
+.icons {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.icons img {
+  width: 55px;
+  transition: all 0.3s ease-out;
+  border-radius: 5px;
+}
+.icons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.icons .up {
+  transform: rotate(180deg);
+}
+.icons .up:hover {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.stack {
+  position: absolute;
+  right: 182px;
+  bottom: 62px;
+  transition: all 5s ease-out;
+}
+.stack-container {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.stack-block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 70px;
+  width: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stack-block span {
+  background-color: #efefef;
+}
+.stack-icon {
+  width: 50px;
+  border-radius: 10px;
+}
+.stack-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  cursor: pointer;
+}
