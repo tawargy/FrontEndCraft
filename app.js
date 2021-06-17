@@ -1,6 +1,6 @@
 import data from "./data.js";
 
-function renderElm(data) {
+function renderDomElm(data) {
   const masonryElm = document.querySelector(".masonry");
   for (let el of data) {
     const masonryItemElm = `
@@ -39,6 +39,17 @@ function resizeMasonryItem(item) {
   item.style.gridRowEnd = "span " + rowSpan;
   item.querySelector(".masonry-content").style.height = rowSpan * 10 + "px";
 }
+(function waitForImages(data) {
+  renderDomElm(data);
+  const allItems = document.getElementsByClassName("masonry-item");
+
+  for (let i = 0; i < allItems.length; i++) {
+    imagesLoaded(allItems[i], function (instance) {
+      const item = instance.elements[0];
+      resizeMasonryItem(item);
+    });
+  }
+})(data);
 
 function resizeAllMasonryItems() {
   const allItems = document.getElementsByClassName("masonry-item");
@@ -48,20 +59,7 @@ function resizeAllMasonryItems() {
   }
 }
 
-function waitForImages(data) {
-  renderElm(data);
-  var allItems = document.getElementsByClassName("masonry-item");
-  for (let i = 0; i < allItems.length; i++) {
-    imagesLoaded(allItems[i], function (instance) {
-      const item = instance.elements[0];
-      resizeMasonryItem(item);
-    });
-  }
-}
-
 const masonryEvents = ["load", "resize"];
 masonryEvents.forEach(function (event) {
   window.addEventListener(event, resizeAllMasonryItems);
 });
-
-waitForImages(data);

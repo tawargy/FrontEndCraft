@@ -1,10 +1,10 @@
 export default [
   {
+    title: "mac dock",
     img: "./projects/mac-dock/screenshot.png",
     link: "./projects/mac-dock/index.html",
-    authGithub: "www.github.com/tawargy",
     auth: "tawargy",
-    title: "mac dock",
+    authGithub: "www.github.com/tawargy",
     tech: ["js", "css"],
   },
 ];
