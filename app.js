@@ -12,7 +12,7 @@ function renderDomElm(data) {
       />
       <a class="title" href="${el.link}">${el.title.toUpperCase()}</a>
       <div class="masonry-info">
-        <a class="auth" href="${
+        <a class="auth" target='_blank' href="${
           el.authGithub
         }"><i class="fab fa-github"></i> ${el.auth.toLowerCase()}</a>
         ${el.tech.map((el) => `<span class="${el}">${el}</span>`)}
